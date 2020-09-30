@@ -110,23 +110,23 @@ formElement.addEventListener('submit', (e) => {
     e.preventDefault();
     imgElement.src = textElement.value;
     if (count === 0) {
+        sendData();
+        showModal();
+        cleanData('age_appearance');
+        cleanData('gender_appearance');
+        cleanData('multicultural_appearance');
         setTimeout(() => {
-            sendData();
-            showModal();
-            cleanData('age_appearance');
-            cleanData('gender_appearance');
-            cleanData('multicultural_appearance');
             count++;
-        }, 2000);
+        }, 1000);
 
 
     } else {
         cleanData('age_appearance');
         cleanData('gender_appearance');
         cleanData('multicultural_appearance');
+        sendData();
+        showModal();
         setTimeout(() => {
-            sendData();
-            showModal();
             count = 0;
         }, 2000)
 
