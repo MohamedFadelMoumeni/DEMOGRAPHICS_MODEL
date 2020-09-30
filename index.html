@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demographics Model</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="theme-switch-wrapper">
+            <span id="toggle-icon">
+                <span class="toggle-text">Light Mode</span>
+                <i class="fas fa-sun" id="icon"></i>
+            </span>
+            <label class="theme-switch">
+                <input type="checkbox">
+                <div class="slider round"></div>
+            </label>
+        </div>
+
+        <h3 id="head-text">Demographics
+        </h3>
+        <p id="paragraph"> Age, Gender, and Multicultural appearance for each detected
+            face based on
+            facial characteristics. (images must include one face)
+        </p>
+        <section class="section">
+            <form id="form" method="post">
+                <input type="text" name="text" id="text" placeholder="url" required>
+                <input type="submit" value="submit">
+            </form>
+
+            <div class="flex">
+                <div class="show" id="show">
+                    <img src="" id="img" class="img" />
+                    <div class="bounding-box" id="bounding-box">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <div class="modal-container " id="modal">
+            <div class="modal">
+                <i class="fas fa-times close-icon" id="close-modal"></i>
+                <div class="modal-header">
+                    <h3 class="info-text">Informations</h3>
+                </div>
+                <div class="modal-content">
+                    <p id="gender" class="para-element">Gender</p>
+                    <ul id="gender_appearance" class="list" hidden>
+                    </ul>
+                    <p id="age" class="para-element">Age</p>
+                    <ul id="age_appearance" class="list" hidden>
+                    </ul>
+                    <p id="multicultural" class="para-element">Multicultural</p>
+                    <ul id="multicultural_appearance" class="list" hidden>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+
+</html>
