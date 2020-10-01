@@ -5738,6 +5738,8 @@ const modalClose = document.getElementById('close-modal');
 const genderElement = document.getElementById('gender');
 const ageElement = document.getElementById('age');
 const multiculturalElement = document.getElementById('multicultural');
+const conceptName = document.getElementById('conceptName');
+const conceptDiv = document.querySelector('.bounding-box-concepts');
 const Clarifai = require('clarifai');
 const dark_mode = "dark";
 const light_mode = "light";
@@ -5805,7 +5807,10 @@ const calculateFaceLocation = (data) => {
     const gender = filterItem.filter(el => el.vocab_id === "gender_appearance").sort((a, b) => b.value - a.value);
     const age = filterItem.filter(el => el.vocab_id === "age_appearance").filter(el => el.value > 0.5).sort((a, b) => b.value - a.value);
     const multicultural = filterItem.filter(el => el.vocab_id === "multicultural_appearance").sort((a, b) => b.value - a.value);
-
+    const genderPerson = gender[0];
+    const agePerson = age[0];
+    conceptName.textContent = `${genderPerson.name} - ${agePerson.name}`;
+    conceptDiv.hidden = false;
     createList(age, 'Age');
     createList(multicultural, 'Multicultural');
     createList(gender, 'Gender');
@@ -5844,7 +5849,6 @@ formElement.addEventListener('submit', (e) => {
         cleanData('gender_appearance');
         cleanData('multicultural_appearance');
         setTimeout(() => {
-
             count++;
         }, 1000);
 
@@ -5856,7 +5860,6 @@ formElement.addEventListener('submit', (e) => {
         sendData();
         showModal();
         setTimeout(() => {
-
             count = 0;
         }, 2000)
 
