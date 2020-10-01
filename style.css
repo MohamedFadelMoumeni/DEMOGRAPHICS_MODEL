@@ -270,6 +270,10 @@ opacity: 1;
  padding: 20px;
  border: 1px solid #000;
 }
+img {
+  max-width: 500px;
+  object-fit: fill;
+}
 @media screen and (max-width: 950px) {
   .section {
     width: 70%;
