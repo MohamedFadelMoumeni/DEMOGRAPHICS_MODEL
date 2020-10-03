@@ -81,7 +81,7 @@ const calculateFaceLocation = (data) => {
     const multicultural = filterItem.filter(el => el.vocab_id === "multicultural_appearance").sort((a, b) => b.value - a.value);
     const genderPerson = gender[0];
     const agePerson = age[0];
-    conceptName.textContent = `${genderPerson.name} - ${agePerson.name}`;
+    conceptName.textContent = `${genderPerson.name}  ${agePerson.name}`;
     conceptDiv.hidden = false;
     createList(age, 'Age');
     createList(multicultural, 'Multicultural');
